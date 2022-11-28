@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/resultsBarChart"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.4"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_text"
+        app:layout_constraintTop_toBottomOf="@id/resultsBarChart"
+        />
+
+    <TextView
+        android:id="@+id/descriptionView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/description"
+        app:layout_constraintTop_toBottomOf="@id/tfliteGroup"
+        />
+
+    <RadioGroup
+        android:id="@+id/accelGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fwGroup"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        android:layout_marginLeft="40dp"
+        >
+        <RadioButton
+            android:id="@+id/cpuRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPU"
+            />
+        <RadioButton
+            android:id="@+id/gpuRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPU"
+            />
+        <RadioButton
+            android:id="@+id/nnapiRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NNAPI"
+            />
+
+    </RadioGroup>
+    <RadioGroup
+        android:id="@+id/fwGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        >
+        <RadioButton
+            android:id="@+id/tfLiteRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tflite"
+            />
+        <RadioButton
+            android:id="@+id/pyTorchRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pytorch"
+            />
+        <RadioButton
+            android:id="@+id/ortRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/onnxruntime"
+            />
+    </RadioGroup>
+    <RadioGroup
+        android:id="@+id/quantGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        app:layout_constraintLeft_toRightOf="@id/accelGroup"
+        android:layout_marginLeft="40dp"
+        >
+        <RadioButton
+            android:id="@+id/float32Radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Float32"
+            />
+        <RadioButton
+            android:id="@+id/float16Radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Float16"
+            />
+        <RadioButton
+            android:id="@+id/int8Radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Int8"
+            />
+    </RadioGroup>
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:barrierDirection="top"
+        app:layout_constraintTop_toBottomOf="@id/fwGroup"
+        />
+    <RadioGroup
+        android:id="@+id/tfliteGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        >
+
+
+
+        <RadioButton
+            android:id="@+id/googleRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google Models"
+            />
+        <RadioButton
+            android:id="@+id/convertedRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ConvertedModels"
+            />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="587dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

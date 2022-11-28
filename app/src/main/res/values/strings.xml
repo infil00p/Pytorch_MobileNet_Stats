@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MobileNet V2 Stats Profiler</string>
+    <string name="pytorch">PyTorch Mobile</string>
+    <string name="tflite">TFLite</string>
+    <string name="onnxruntime">ONNX Runtime</string>
+    <string name="description">This application runs three ML models in the three main interpretive
+    ML Frameworks on Android, TFLite, ONNX Runtime and PyTorch Mobile.  The pre and post-processing
+    is done in OpenCV and we use a collection of 25 images sampled at 224x224.  The above
+    graph is generating values in decimal seconds, and lower is better</string>
+    <string name="button_text">Run MobileNet Models on the Image Set</string>
+</resources>
